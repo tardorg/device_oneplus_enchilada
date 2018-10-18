@@ -24,6 +24,9 @@ $(call inherit-product, device/oneplus/enchilada/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
+# Build GApps inline (requires https://gitlab.com/anirudhgupta109/vendor_pixelgapps.git/)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+
 PRODUCT_NAME := aosip_enchilada
 PRODUCT_DEVICE := enchilada
 PRODUCT_MANUFACTURER := OnePlus
