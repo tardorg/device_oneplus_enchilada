@@ -20,11 +20,20 @@
 
 DEVICE_PATH := device/oneplus/enchilada
 
+BUILD_TOP := $(shell pwd)
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Kernel
 TARGET_KERNEL_CONFIG := flash_defconfig
+
+# GCC (Reqiures https://gitlab.com/anirudhgupta109/gcc-prebuilts/tree/8.2.1)
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-gnu-8.2/bin
+
+# Clang
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := 7.0.2
 
