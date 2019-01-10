@@ -22,16 +22,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/enchilada/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Build GApps inline (requires https://gitlab.com/anirudhgupta109/vendor_pixelgapps.git/)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+
+# PE Specific GApps related exports
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+PRODUCT_PACKAGES += \
+    WallpapersBReel2018
 
 # Maintainer Prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
 DEVICE_MAINTAINERS="Anirudh Gupta"
 
-PRODUCT_NAME := aosip_enchilada
+PRODUCT_NAME := aosp_enchilada
 PRODUCT_DEVICE := enchilada
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus

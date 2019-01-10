@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "device_oneplus_sdm845-common",
+    "target_path": "device/oneplus/sdm845-common"
+  },
+  {
+    "repository": "packages_apps_WallpapersBReel2018",
+    "target_path": "packages/apps/WallpapersBReel2018",
+    "branch": "pie",
+    "remote": "pixel-gitlab"
+  }
+]
